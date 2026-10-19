@@ -3,23 +3,18 @@
  * SITE CONFIGURATION
  * ==============================================================================
  * 
- * Edit this single file to customize your website.
+ * Edit this single file or use the built-in /admin panel to customize your website.
  * 
- * You can easily update:
- *  - Website title
- *  - Sample landing image URL
- *  - Main button text ("View All Pictures")
- *  - 6 Gallery image URLs, their destination links, and optional captions
- *  - Contact and Privacy settings
- * 
- * HOW TO USE YOUR OWN IMAGES & DESTINATIONS:
- * 1. Replace the "sampleImage" URL with your landing image link.
- * 2. In the "images" array below, update each item's:
- *    - imageUrl: The direct URL to your hosted image (.jpg, .png, .webp)
- *    - destinationUrl: The external page visitors open when clicking that image
- *    - caption: (Optional) The text label displayed beneath or alongside the image
+ * All six uploaded images in src/assets/images are preserved and imported below.
  * ==============================================================================
  */
+
+import image1 from '../assets/images/regenerated_image_1792413619865.jpg';
+import image2 from '../assets/images/regenerated_image_1792413622421.png';
+import image3 from '../assets/images/regenerated_image_1792413629309.jpg';
+import image4 from '../assets/images/regenerated_image_1792413630953.jpg';
+import image5 from '../assets/images/regenerated_image_1792413633440.jpg';
+import image6 from '../assets/images/regenerated_image_1792413643226.jpg';
 
 export interface GalleryImage {
   id: number;
@@ -54,6 +49,19 @@ export interface SiteConfig {
   };
 }
 
+/**
+ * Preserved catalog of your 6 uploaded images.
+ * You can select any of these in the /admin panel or in code.
+ */
+export const uploadedImages = [
+  { id: 1, name: 'Image 1 (Mountain / Landscape)', src: image1, filename: 'regenerated_image_1792413619865.jpg' },
+  { id: 2, name: 'Image 2 (Forest / Nature)', src: image2, filename: 'regenerated_image_1792413622421.png' },
+  { id: 3, name: 'Image 3 (Shoreline / Coast)', src: image3, filename: 'regenerated_image_1792413629309.jpg' },
+  { id: 4, name: 'Image 4 (Canyon / Rock)', src: image4, filename: 'regenerated_image_1792413630953.jpg' },
+  { id: 5, name: 'Image 5 (Night Sky / Mountain)', src: image5, filename: 'regenerated_image_1792413633440.jpg' },
+  { id: 6, name: 'Image 6 (Waterfall / Lagoon)', src: image6, filename: 'regenerated_image_1792413643226.jpg' },
+];
+
 export const siteConfig: SiteConfig = {
   // Main title of your website
   title: "My Image Gallery",
@@ -63,7 +71,7 @@ export const siteConfig: SiteConfig = {
 
   // PAGE 1: Large sample image URL displayed on the landing page.
   // Note: The sample image on the landing page is not clickable.
-  sampleImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80",
+  sampleImage: image1,
   sampleImageCaption: "Featured Landscape Showcase",
 
   // Button text on Page 1 that navigates visitors to Page 2
@@ -75,37 +83,37 @@ export const siteConfig: SiteConfig = {
   images: [
     {
       id: 1,
-      imageUrl: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+      imageUrl: image1,
       destinationUrl: "https://example.com/destination1",
       caption: "Misty Mountain Vista"
     },
     {
       id: 2,
-      imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80",
+      imageUrl: image2,
       destinationUrl: "https://example.com/destination2",
       caption: "Emerald Forest Canopy"
     },
     {
       id: 3,
-      imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      imageUrl: image3,
       destinationUrl: "https://example.com/destination3",
       caption: "Golden Sunset Shoreline"
     },
     {
       id: 4,
-      imageUrl: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
+      imageUrl: image4,
       destinationUrl: "https://example.com/destination4",
       caption: "Canyon Sunlight Beam"
     },
     {
       id: 5,
-      imageUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+      imageUrl: image5,
       destinationUrl: "https://example.com/destination5",
       caption: "Starry Alpine Night"
     },
     {
       id: 6,
-      imageUrl: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80",
+      imageUrl: image6,
       destinationUrl: "https://example.com/destination6",
       caption: "Cascading Crystal Falls"
     }

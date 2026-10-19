@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { siteConfig } from '../config/siteConfig';
+import { useSiteConfig } from '../context/ConfigContext';
 import { Shield, ExternalLink, ArrowLeft } from 'lucide-react';
 
 export const PrivacyPolicyPage: React.FC = () => {
+  const { config: siteConfig } = useSiteConfig();
   return (
     <div className="py-8 sm:py-12">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

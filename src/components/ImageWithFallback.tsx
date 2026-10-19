@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ImageOff, Camera } from 'lucide-react';
 
 interface ImageWithFallbackProps {
@@ -20,6 +20,11 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 }) => {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setHasError(false);
+    setIsLoading(true);
+  }, [src]);
 
   return (
     <div

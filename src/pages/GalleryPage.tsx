@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { siteConfig } from '../config/siteConfig';
+import { useSiteConfig } from '../context/ConfigContext';
 import { ImageCard } from '../components/ImageCard';
 import { ArrowLeft, ExternalLink, Info } from 'lucide-react';
 
 export const GalleryPage: React.FC = () => {
+  const { config: siteConfig } = useSiteConfig();
   const images = siteConfig.images || [];
 
   return (
@@ -55,11 +56,15 @@ export const GalleryPage: React.FC = () => {
 
         {/* Bottom Navigation CTA */}
         <div className="mt-12 sm:mt-16 pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-slate-500 text-center sm:text-left">
-            <span>Want to update these pictures or links? Simply edit </span>
-            <code className="px-1.5 py-0.5 rounded bg-slate-100 font-mono text-slate-700">
-              src/config/siteConfig.ts
-            </code>
+          <div className="text-xs text-slate-500 text-center sm:text-left flex flex-wrap items-center gap-2">
+            <span>Want to update these pictures or links?</span>
+            <Link
+              to="/admin"
+              className="inline-flex items-center gap-1 font-semibold text-slate-800 underline underline-offset-2 hover:text-slate-950"
+            >
+              <span>Open Admin Panel</span>
+              <ArrowLeft className="w-3 h-3 rotate-180" />
+            </Link>
           </div>
 
           <Link

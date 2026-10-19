@@ -12,7 +12,7 @@ export const ImageCard: React.FC<ImageCardProps> = ({ image }) => {
     <div className="group flex flex-col bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-md transition-all duration-200">
       {/* Standard HTML anchor link opening in same browser tab */}
       <a
-        href={image.destinationUrl}
+        href={image.destinationUrl || '#'}
         target="_self"
         rel="noopener"
         aria-label={`Open ${image.caption || `image ${image.id}`} destination`}

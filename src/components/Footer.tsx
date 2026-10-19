@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { siteConfig } from '../config/siteConfig';
+import { useSiteConfig } from '../context/ConfigContext';
 
 export const Footer: React.FC = () => {
+  const { config: siteConfig } = useSiteConfig();
   const currentYear = 2026;
 
   return (
@@ -27,6 +28,9 @@ export const Footer: React.FC = () => {
             </Link>
             <Link to="/contact" className="text-slate-600 hover:text-slate-900 transition-colors">
               Contact
+            </Link>
+            <Link to="/admin" className="text-slate-400 hover:text-slate-700 transition-colors">
+              Admin
             </Link>
           </div>
         </div>

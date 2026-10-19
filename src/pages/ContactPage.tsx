@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { siteConfig } from '../config/siteConfig';
+import { useSiteConfig } from '../context/ConfigContext';
 import { Mail, Send, CheckCircle2, ArrowLeft, MessageSquare } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {
+  const { config: siteConfig } = useSiteConfig();
   const [formData, setFormData] = useState({
     name: '',
     email: '',

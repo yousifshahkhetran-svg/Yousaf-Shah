@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { siteConfig } from '../config/siteConfig';
+import { useSiteConfig } from '../context/ConfigContext';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import { ArrowRight, Grid3X3, ShieldCheck, Zap } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
+  const { config: siteConfig } = useSiteConfig();
   return (
     <div className="py-8 sm:py-14">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,6 +59,16 @@ export const HomePage: React.FC = () => {
           <p className="mt-3 text-xs sm:text-sm text-slate-500">
             Browse our full 6-picture collection with direct access links.
           </p>
+
+          <div className="mt-4">
+            <Link
+              to="/admin"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 bg-slate-100 hover:bg-slate-200/80 rounded-lg transition-colors"
+            >
+              <span>Customize in Admin Panel</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
         </div>
 
         {/* Quiet Trust & Feature Row */}

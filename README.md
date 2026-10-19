@@ -19,7 +19,12 @@ A modern, high-performance, mobile-responsive image landing and gallery website 
 - **Additional Pages**:
   - **Privacy Policy**: Honest, accurate privacy policy outlining data practices and third-party link disclaimers.
   - **Contact Page**: Clean contact form and support information without invented email addresses or phone numbers.
-- **Single-File Configuration**: Customize title, images, destinations, button text, and captions in `src/config/siteConfig.ts`.
+- **Interactive Admin Panel (`/admin`)**:
+  - Visually customize image assignments and displayed captions for all 6 gallery pictures and the landing sample image.
+  - 1-click thumbnail selector from all 6 preserved uploaded images in `src/assets/images/`.
+  - Instant live grid preview and localStorage persistence.
+  - 1-click "Export Code" generator to keep static code in sync.
+- **Single-File Configuration**: Customize title, images, destinations, button text, and captions in `src/config/siteConfig.ts` or via `/admin`.
 
 ---
 
@@ -129,6 +134,32 @@ export const siteConfig: SiteConfig = {
    - Paste the external website link into `destinationUrl`.
    - Adjust `caption` to describe the picture or leave as desired.
 4. Save the file. The website updates automatically.
+
+---
+
+---
+
+## Deployment to Netlify
+
+This website is fully configured for deployment on Netlify with pre-configured SPA routing redirects (`netlify.toml` and `public/_redirects`).
+
+### Method 1: Netlify Drop (Instant Drag-and-Drop, No Git Required)
+1. Build the production files:
+   ```bash
+   npm run build
+   ```
+2. Go to **[app.netlify.com/drop](https://app.netlify.com/drop)** in your browser.
+3. Drag and drop the `dist` folder directly onto the upload area.
+4. Netlify will publish your site in seconds with a live HTTPS URL!
+
+### Method 2: Connect via GitHub / GitLab
+1. Push your repository to GitHub or GitLab.
+2. In the Netlify dashboard, click **"Add new site"** > **"Import an existing project"**.
+3. Choose your repository.
+4. Netlify automatically detects the settings from `netlify.toml`:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+5. Click **"Deploy site"**.
 
 ---
 
