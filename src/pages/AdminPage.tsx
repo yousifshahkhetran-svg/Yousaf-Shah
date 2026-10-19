@@ -691,39 +691,34 @@ export const siteConfig = ${JSON.stringify(draftConfig, null, 2)};
 
               {/* Preview SubTab: Landing */}
               {previewSubTab === 'landing' && (
-                <div className="max-w-2xl mx-auto py-6 text-center">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                    {draftConfig.title}
-                  </h2>
-                  {draftConfig.tagline && (
-                    <p className="text-sm text-slate-600 mb-6">
-                      {draftConfig.tagline}
-                    </p>
-                  )}
-
-                  <div className="rounded-2xl border border-slate-200 p-2 bg-slate-50 mb-6">
-                    <div className="aspect-[16/10] rounded-xl overflow-hidden bg-slate-200">
-                      <img
-                        src={draftConfig.sampleImage}
-                        alt="Sample Preview"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    {draftConfig.sampleImageCaption && (
-                      <p className="text-xs text-slate-500 mt-2">
-                        {draftConfig.sampleImageCaption}
+                <div className="max-w-xl mx-auto py-12 text-center space-y-6">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white mx-auto flex items-center justify-center shadow-xs">
+                    <Layers className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                      {draftConfig.title}
+                    </h2>
+                    {draftConfig.tagline && (
+                      <p className="text-sm text-slate-600">
+                        {draftConfig.tagline}
                       </p>
                     )}
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => setPreviewSubTab('gallery')}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-slate-900 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
-                  >
-                    <span>{draftConfig.buttonText}</span>
-                    <ArrowLeft className="w-4 h-4 rotate-180" />
-                  </button>
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setPreviewSubTab('gallery')}
+                      className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-white bg-slate-900 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
+                    >
+                      <span>{draftConfig.buttonText || 'View Gallery'}</span>
+                      <ArrowLeft className="w-4 h-4 rotate-180" />
+                    </button>
+                    <p className="text-xs text-slate-400 mt-2">
+                      6 pictures with direct link destinations
+                    </p>
+                  </div>
                 </div>
               )}
 
